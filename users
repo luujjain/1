@@ -1,0 +1,76 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+public class Users {
+    public static long ID;
+    public static String Name;
+    public static int Age;
+    public static Double Height;
+   public static Double Weight;
+    static int NumberOfMembers=0;
+    static Scanner input=new Scanner(System.in) ;
+    static ArrayList<Users> members=new ArrayList<>();
+    public Users()
+    {
+
+        NumberOfMembers++;
+    }
+    public Users(long id,String name,int age,Double height,Double weight)
+    {
+        ID=id;
+        Name=name;
+        Age=age;
+        Height=height;
+        Weight=weight;
+        NumberOfMembers++;
+    }
+    public static void addmember()
+    {
+        //input.nextLine();
+        System.out.println("\t Please enter member Name");
+        Name=input.next();
+        System.out.println("\t Please enter member Age");
+        Age= input.nextInt();
+        System.out.println("\t Please enter member Height");
+        Height=input.nextDouble();
+        System.out.println("\t Please enter member Weight ");
+        Weight=input.nextDouble();
+        System.out.println("\t Please enter member ID");
+        ID= input.nextLong();
+        Users a = new Users(ID,Name,Age,Height,Weight);
+        members.add(a);
+    }
+    public String toString(){
+        return "Name: " + Name + "\nAge: " + Age + "\nHeight: " + Height + "\nWeight: " + Weight + "\nID: " + ID;
+    }
+
+}
+class AdminModyifing extends Users{
+    public static void updateinfo()
+    {
+        System.out.println("Please enter the ID of the member");
+
+    }
+    public static void deletemember()
+    {
+
+    }
+    public static void searchformember()
+    {
+
+    }
+    public static void displyinfo()
+    {
+        for(int i=0 ; i<members.size() ; i++)
+            System.out.println(" member "+(i+1)+"\n"+members.get(i));
+    }
+}
+class Trainers  extends Users{
+   double BMI;
+    {
+
+    }
+
+
+}
