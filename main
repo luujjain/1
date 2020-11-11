@@ -1,0 +1,89 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+public class Main {
+    static String main_menu = "\n*** Welcome to GYM System ***\n" + "1- Users Subsystem\n" +
+            "2- Services Subsystem\n" + "3- Budget Subsystem\n"+ "4- Exit \n" +
+            "Your Choice: ";
+    static String users_menu="\n\t *** Welcome to Users Sub-System *** \n"+
+            "\t 1- Add new member\n"+
+            "\t 2- Update information for specific member \n"+
+            "\t 3- Delete information for specific member \n"+
+            "\t 4- Search for a member\n"+
+            "\t 5- Count BMI for specific member \n"+
+            "\t 6- Display information \n"+
+            "\t 7- Exit \n";
+
+
+    static Scanner input=new Scanner(System.in) ;
+     static ArrayList<Users> members=new ArrayList<>();
+    public static void main(String[] args) {
+int choice=0;
+do {
+    System.out.println(main_menu);
+    choice = input.nextInt();
+    switch (choice) {
+        case 1:
+            users_System();
+            break;
+        case 2:
+            service_System();
+            break;
+        case 3:
+            budegt_System();
+            break;
+        case 4:
+            break;
+        default:
+            System.out.println(" Wrong Entry Please enter a valid opition ");
+    }
+}
+    while (choice!=4);
+
+    }
+    static void users_System()
+    {
+        int choice;
+        do {
+            System.out.println(users_menu);
+            choice=input.nextInt();
+            switch (choice)
+            {
+                case 1:
+                    Users.addmember();
+                    break;
+                case 2:
+           AdminModyifing.updateinfo();
+           break;
+                case 3:
+                    AdminModyifing.deletemember();
+                    break;
+                case 4:
+                    AdminModyifing.searchformember();
+                    break;
+                case 5:
+                    System.out.println(" Please enter the ID for the user\n");
+                    long ID_=input.nextLong();
+                    //Trainers.setBMI(ID_);
+                    break;
+                case 6:
+                    AdminModyifing.displyinfo();
+                    break;
+                case 7:
+                    break;
+                default:
+                    System.out.println("Wrong entry Please enter a valid option \n");
+            }
+        }
+        while (choice!=6);
+    }
+    static void service_System()
+    {
+
+    }
+    static void budegt_System()
+    {
+
+    }
+}
